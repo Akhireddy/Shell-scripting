@@ -18,6 +18,7 @@ echo Starting Nginx service
 ## COL - color code
 ## m --end of syntax
 ## 0 - to disable color
+##all the above things should be quoted, either single or double quotes
 ## color codes
 # REd  31
 # Green 32
