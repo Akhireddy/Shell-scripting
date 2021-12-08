@@ -30,5 +30,5 @@ echo -e "\e[34mHello in Blue Color\e[0m"
 echo -e "\e[35mHello in Magenta Color\e[0m"
 echo -e "\e[31mHello in Red Color\e[0m"
 echo -e "\e[31mAkhi \e[0m"
-# to blink in bold
+# to  bold letter
 echo -e "\e[31mnormal Red\e[1;31mBold Red\e[0m"
