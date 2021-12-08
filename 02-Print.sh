@@ -29,4 +29,6 @@ echo -e "\e[33mHello in Yellow Color\e[0m"
 echo -e "\e[34mHello in Blue Color\e[0m"
 echo -e "\e[35mHello in Magenta Color\e[0m"
 echo -e "\e[31mHello in Red Color\e[0m"
-echo -e "\e{31 Akhi \e[0m"
+echo -e "\e[31mAkhi \e[0m"
+# to blink in bold
+echo -e "\e[32mAkhi\e[1:31mBold Red\e[0m"
