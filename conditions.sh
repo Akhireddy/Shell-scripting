@@ -9,7 +9,7 @@
 # if command
 # 1. Simple if
 
-syntax:
+#syntax:
 #if [ expression ]; then
 # commands
 
@@ -19,7 +19,7 @@ syntax:
 # 2. If Else
 # syntax:
 
-if [ expression ]; then
+#if [ expression ]; then
 # commands-1
 #else
 # commands-2
@@ -57,7 +57,7 @@ if [ expression ]; then
    #Operators: -eto check if files exists or not
      # (somany are there can be referred from documentation when needed)
 
-read -p 'Enter your age: ' age
+read -p 'Enter your age:' age
 if [ "${age}" -lt 18 ]; then
   echo you are a senior citizen
 else
