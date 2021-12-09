@@ -17,5 +17,14 @@
 #Finally restart the service once to effect the changes.
 
 # systemctl restart nginx
-echo Frontend setup
-#yum install nginx -y
+yum install nginx -y
+if [ $? -ne 0 ]; then
+   echo "Nginx Install failed"
+   exit
+fi
+curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zi"
+if [ $? -ne 0 ]; then
+   echo "Download contented is  failed"
+   exit
+fi
+
