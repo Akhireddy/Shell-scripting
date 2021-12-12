@@ -19,7 +19,7 @@
 # systemctl restart nginx
 #all below stac_check copied to comman.sh file since same info need to use in all file.so created common file coping from there it and putting source file
 #source is nothing but import , like export command
-source componenets/common.sh
+source components/common.sh
 #LOG_FILE=/tmp/roboshop.log
 #rm -f ${LOG_FILE}
 
