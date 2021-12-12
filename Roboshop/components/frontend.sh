@@ -48,5 +48,6 @@ STAT_CHECK $? "Copying Frontend content"
 cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
 STAT_CHECK $? "update Nginx Congi File"
 
-systemctl enable nginx &>>${LOG_FILE} && systemctl restart nginx &>>$(LOG_FILE}
+
+systemctl enable nginx &>>${LOG_FILE} && systemctl restart nginx &>>${LOG_FILE}
 STAT_CHECK $? "nginx restarted"
