@@ -36,16 +36,20 @@ STAT_CHECK $? "Nginx installation"
 curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 STAT_CHECK $? "Dowload frontend failed"
 
-cd /usr/share/nginx/html
-rm -rf *
-unzip /tmp/frontend.zip
-mv frontend-main/* .
-mv static/* .
-rm -rf frontend-master static README.md
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
+rm -rf /usr/share/nginx/html/*
+STAT_CHECK $? "Remove old HTML pages"
 
-systemctl enable nginx
-systemctl start nginx
+cd /tmp && unzip /tmp/frontend.zip &>>${LOG_FILE}
+STAT_CHECK $? "Extracing Frontend content"
+
+cd /tmp/frontend-main/static/ && cp -pr * /usr/share/nginx/html/
+STAT_CHECK $? "Copying Frontend content"
+
+cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
+STAT_CHECK $? "update Nginx Congi File"
+
+systemctl enable nginx &>>${LOG_FILE} && systemctl start nginx &>>$(LOG_FILE}
+
 
 
 
