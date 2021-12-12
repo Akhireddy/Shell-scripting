@@ -17,18 +17,20 @@
 #Finally restart the service once to effect the changes.
 
 # systemctl restart nginx
+#all below stac_check copied to comman.sh file since same info need to use in all file.so created common file coping from there it and putting source file
+#source is nothing but import , like export command
+source componenets/common.sh
+#LOG_FILE=/tmp/roboshop.log
+#rm -f ${LOG_FILE}
 
-LOG_FILE=/tmp/roboshop.log
-rm -f ${LOG_FILE}
-
-STAT_CHECK() {
+#STAT_CHECK() {
   if [ $1 -ne 0 ]; then
      echo -e "\e[1;31m${2} - Failed\e[0m"
      exit 1
      else
      echo -e "\e[1;32m${2} - SUCCESS\e[0m"
    fi
-}
+#}
 
 yum install nginx -y >>${LOG_FILE}
 STAT_CHECK $? "Nginx installation"
